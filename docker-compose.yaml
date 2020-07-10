@@ -1,0 +1,11 @@
+version: '3.1'
+services:
+  nagios:
+    container_name: nagios4
+    image: parmijot/infra_prueba3:latest
+    restart: always
+    ports:
+      - 8080:80
+    volumes: 
+      - ./archivos_cargar/nagios/etc/:/opt/nagios/etc/
+      - ./archivos_cargar/apache2/nagios.conf:/etc/apache2/sites-available/nagios.conf
